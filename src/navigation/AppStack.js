@@ -7,6 +7,9 @@ import { Colors } from '../constants/Colors';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Splash from '../screens/Splash';
 import Login from '../screens/Login';
+import Home from '../screens/DashboardScreen/Home';
+import Account from '../screens/DashboardScreen/Account';
+import Activity from '../screens/DashboardScreen/Activity';
 
 
 const Stack = createNativeStackNavigator();
@@ -48,22 +51,24 @@ function HomeTabs() {
 
         <Tab.Screen
           name={'About'}
-          component={About}
+          component={Activity}
           options={{
             tabBarLabel: 'About',
             tabBarIcon: ({color, size, focused}) => (
-              <Icon name={'format-list-bulleted'} size={24} color={color} />
+              <View style={{backgroundColor:Colors.primary , padding:4 , borderRadius:5}}>
+                <Icon name={'plus'} size={24} color={Colors.white} />
+              </View>
             ),
           }}
         />
 
         <Tab.Screen
           name={'Cart'}
-          component={Cart}
+          component={Account}
           options={{
             tabBarLabel: 'Cart',
             tabBarIcon: ({color, size, focused}) => (
-              <Icon name={'account-group-outline'} size={24} color={color} />
+              <Icon name={'account-circle-outline'} size={24} color={color} />
             ),
           }}
         />

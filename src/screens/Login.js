@@ -10,6 +10,7 @@ import {Colors} from '../constants/Colors';
 import {pixelSizeVertical} from '../constants/ResponsiveScreen';
 import TextInputView from '../components/TextInputView';
 import CustomButton from '../components/CustomButton';
+import { navigate } from '../navigation/RootNavigation';
 
 const MobileSchema = Yup.object().shape({
   mobile: Yup.string()
@@ -18,6 +19,9 @@ const MobileSchema = Yup.object().shape({
 });
 
 export default function Login() {
+
+
+
   return (
     <KeyboardAwareScrollView style={{flex: 1 , backgroundColor:Colors.white}}>
       <Image
@@ -30,9 +34,9 @@ export default function Login() {
         initialValues={{
           mobile: '',
         }}
-        validationSchema={MobileSchema}
+        // validationSchema={MobileSchema}
         onSubmit={values => {
-          loginData(values);
+         navigate('Dashboard')
         }}>
         {({
           handleChange,
@@ -56,20 +60,13 @@ export default function Login() {
               }}>
               Welcome to seaFreshh
             </Text>
-            <Text
-              style={{
-                fontSize: FontSize.FS_15,
-                fontFamily: Fonts.MEDIUM,
-                marginBottom: 10,
-              }}>
-              Mobile Number
-            </Text>
+           
             <TextInputView
               containerStyle={{}}
               onChangeText={handleChange('mobile')}
               onBlur={handleBlur('mobile')}
               value={values.mobile}
-              placeholder={'Mobile Number'}
+              placeholder={'Email'}
               keyboardType={'number-pad'}
               maxLength={10}
               error={errors.mobile && touched.mobile && errors.mobile}
@@ -79,7 +76,7 @@ export default function Login() {
               onChangeText={handleChange('mobile')}
               onBlur={handleBlur('mobile')}
               value={values.mobile}
-              placeholder={'Mobile Number'}
+              placeholder={'Password'}
               keyboardType={'number-pad'}
               maxLength={10}
               error={errors.mobile && touched.mobile && errors.mobile}
