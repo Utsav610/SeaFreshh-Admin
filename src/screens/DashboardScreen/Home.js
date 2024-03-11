@@ -17,6 +17,7 @@ import {
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import HeaderView from '../../components/HeaderView';
+import ProductCard from '../../components/ProductCard';
 
 export default function Home() {
   return (
@@ -79,16 +80,7 @@ export default function Home() {
           }}>
           All Product
         </Text>
-        <View style={{elevation: 5}}>
-          <Image source={Images.Product} style={{width: 200, height: 200}} />
-          <View>
-            <Text>Surmani Fish - Curry Cut</Text>
-            <Text>Surmani Fish - Curry Cut</Text>
-            <View>
-              <Text>Sumai</Text>
-            </View>
-          </View>
-        </View>
+        <ProductCard/>
       </View>
     </HeaderView>
   );

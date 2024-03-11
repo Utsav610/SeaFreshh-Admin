@@ -50,10 +50,10 @@ function HomeTabs() {
         />
 
         <Tab.Screen
-          name={'About'}
+          name={'Activity'}
           component={Activity}
           options={{
-            tabBarLabel: 'About',
+            tabBarLabel: '',
             tabBarIcon: ({color, size, focused}) => (
               <View style={{backgroundColor:Colors.primary , padding:4 , borderRadius:5}}>
                 <Icon name={'plus'} size={24} color={Colors.white} />

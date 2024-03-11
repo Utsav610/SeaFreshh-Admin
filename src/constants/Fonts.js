@@ -1,12 +1,12 @@
 import {fontPixel} from './ResponsiveScreen';
 
-export const Fonts = {
-  REGULAR: 'Manrope-Regular',
-  LIGHT: 'Manrope-Light',
-  MEDIUM: 'Manrope-Medium',
-  SEMIBOLD: 'Manrope-SemiBold',
-  BOLD: 'Manrope-Bold',
-};
+export const Fonts={
+  REGULAR : 'Outfit-Regular',
+  LIGHT : 'Outfit-Light',
+  MEDIUM : 'Outfit-Medium',
+  SEMIBOLD : 'Outfit-SemiBold',
+  BOLD : 'Outfit-Bold'
+}
 
 export const FontSize = {
   FS_10: fontPixel(10),
