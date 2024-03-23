@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {Images} from '../constants/Images';
 import {
@@ -8,10 +8,11 @@ import {
 import {FontSize, Fonts} from '../constants/Fonts';
 import {Colors} from '../constants/Colors';
 import CustomButton from './CustomButton';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function ProductCard() {
+export default function ProductCard({containerstyle}) {
   return (
-    <View style={[styles.cardContainer]}>
+    <View style={[styles.cardContainer,{...containerstyle}]}>
       <Image
         source={Images.Product}
         style={{
@@ -30,6 +31,7 @@ export default function ProductCard() {
         <View
           style={{
             flexDirection: 'row',
+            flexWrap: 'wrap',
             alignItems: 'center',
             marginVertical: 10,
           }}>
@@ -78,7 +80,26 @@ export default function ProductCard() {
         style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
-        }}></View>
+          marginHorizontal: 10,
+          paddingVertical: 5,
+        }}>
+        <TouchableOpacity
+          style={{
+            backgroundColor: Colors.primary,
+            borderRadius: 10,
+            padding: 5,
+          }}>
+          <Icon name={'file-edit'} size={24} color={Colors.white} />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            backgroundColor: Colors.primary,
+            borderRadius: 10,
+            padding: 5,
+          }}>
+          <Icon name={'trash-can'} size={24} color={Colors.white} />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -86,10 +107,10 @@ export default function ProductCard() {
 const styles = StyleSheet.create({
   cardContainer: {
     flex: 1,
-    width: 200,
     elevation: 5,
     backgroundColor: Colors.white,
     marginBottom: 10,
+    marginRight: 5,
     borderRadius: 10,
     overflow: 'hidden',
   },

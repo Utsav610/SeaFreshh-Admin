@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect } from 'react'
 import { resetScreen } from '../navigation/RootNavigation'
+import { Images } from '../constants/Images'
 
 export default function Splash() {
     useEffect(()=>{
@@ -10,7 +11,10 @@ export default function Splash() {
       },[])
   return (
     <View>
-      <Text>Splash</Text>
+      <Image
+      source={Images.Splash}
+      style={{width:'100%' , height:'100%'}}
+      />
     </View>
   )
 }

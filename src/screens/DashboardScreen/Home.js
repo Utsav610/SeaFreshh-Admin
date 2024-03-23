@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import {Images} from '../../constants/Images';
@@ -18,6 +19,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import HeaderView from '../../components/HeaderView';
 import ProductCard from '../../components/ProductCard';
+import {navigate} from '../../navigation/RootNavigation';
 
 export default function Home() {
   return (
@@ -78,9 +80,18 @@ export default function Home() {
             fontSize: FontSize.FS_16,
             color: Colors.black,
           }}>
-          All Product
+          All Products
         </Text>
-        <ProductCard/>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <ProductCard />
+          <ProductCard />
+        </View>
+        <TouchableOpacity
+          onPress={() => {
+            navigate('AllProduct');
+          }}>
+          <Text>See More</Text>
+        </TouchableOpacity>
       </View>
     </HeaderView>
   );

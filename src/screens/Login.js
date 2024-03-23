@@ -20,8 +20,6 @@ const MobileSchema = Yup.object().shape({
 
 export default function Login() {
 
-
-
   return (
     <KeyboardAwareScrollView style={{flex: 1 , backgroundColor:Colors.white}}>
       <Image

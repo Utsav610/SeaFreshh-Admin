@@ -10,6 +10,9 @@ import Login from '../screens/Login';
 import Home from '../screens/DashboardScreen/Home';
 import Account from '../screens/DashboardScreen/Account';
 import Activity from '../screens/DashboardScreen/Activity';
+import AllProduct from '../screens/AllProduct';
+import Offer from '../screens/Offer';
+import CreateOffer from '../screens/CreateOffer';
 
 
 const Stack = createNativeStackNavigator();
@@ -63,10 +66,10 @@ function HomeTabs() {
         />
 
         <Tab.Screen
-          name={'Cart'}
+          name={'Account'}
           component={Account}
           options={{
-            tabBarLabel: 'Cart',
+            tabBarLabel: 'Account',
             tabBarIcon: ({color, size, focused}) => (
               <Icon name={'account-circle-outline'} size={24} color={color} />
             ),
@@ -87,6 +90,9 @@ export default function AppStack() {
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Dashboard" component={HomeTabs} />
+      <Stack.Screen name="AllProduct" component={AllProduct} />
+      <Stack.Screen name="Offer" component={Offer} />
+      <Stack.Screen name="Create Offer" component={CreateOffer} />
     </Stack.Navigator>
   );
 }
